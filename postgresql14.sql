@@ -15,6 +15,7 @@ select a.*, count(b.id) as books from author a
 left join book b on a.id = b.author_id 
 group by a.id 
 
+CREATE VIEW author_raiting as
 select a.*, avg(r.rate) as average from author a 
 inner join book b on a.id = b.author_id 
 inner join review r on b.id = r.book_id  
